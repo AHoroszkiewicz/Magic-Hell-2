@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsSO: {fileID: 11400000, guid: ffca4e42385d9be488b481ce7173f133, type: 2}
   currentHealth: 100
+  myAnimator: {fileID: 7540242489720561313}
 --- !u!1 &7540242489720561305
 GameObject:
   m_ObjectHideFlags: 0
