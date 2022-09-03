@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator myAnimator;
     private Vector2 Input;
     [SerializeField] float moveSpeed = 10f;
+    private NearestEnemy nearestEnemy;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+        //Debug.Log(nearestEnemy.GetNearestEnemy());
     }
 
     private void Run()

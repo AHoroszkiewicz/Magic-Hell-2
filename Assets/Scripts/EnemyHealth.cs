@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] StatsSO statsSO;
     private float maxHealth;
+    private Animator myAnimator;
+    [SerializeField] StatsSO statsSO;
     [SerializeField] float currentHealth;
+    [SerializeField] float deathTimer = 3f;
 
-    void Start()
+    private void Start()
     {
         maxHealth = statsSO.health;
         currentHealth = maxHealth;
+        myAnimator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        Die();
+    }
+
+    private void Die()
+    {
+        if (currentHealth <= 0)
+        {
+            myAnimator.SetBool("isDead", true);
+            Destroy(gameObject, deathTimer);
+        }
     }
 }

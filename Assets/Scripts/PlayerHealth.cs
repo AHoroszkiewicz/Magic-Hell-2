@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] StatsSO statsSO;
     private Image healthBar;
     private float maxHealth;
+    [SerializeField] StatsSO statsSO;
     [SerializeField] float currentHealth;
     [SerializeField] Animator myAnimator;
 

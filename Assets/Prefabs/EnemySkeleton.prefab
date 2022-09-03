@@ -174,3 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsSO: {fileID: 11400000, guid: 0ee11e4c380a4fd46a5fcf41ccec1463, type: 2}
   currentHealth: 0
+  deathTimer: 0.5

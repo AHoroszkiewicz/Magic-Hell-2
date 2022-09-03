@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private Transform target;
     private Rigidbody2D myRigidbody;
+    private Animator myAnimator;
     [SerializeField] float stoppingDistance = 1f;
     [SerializeField] float speed = 10f;
 
@@ -13,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     
@@ -24,9 +26,12 @@ public class EnemyMovement : MonoBehaviour
     
     private void Run()
     {
-        if (Vector2.Distance(transform.position, target.position) >= stoppingDistance)
+        if (!myAnimator.GetBool("isDead"))
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, target.position) >= stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
         }
     }
 
