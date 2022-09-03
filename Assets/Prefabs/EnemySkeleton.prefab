@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3623093679068858705}
   - component: {fileID: 3623093679068858706}
   - component: {fileID: 512689143}
+  - component: {fileID: 8462385832999032509}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: EnemySkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,3 +160,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoppingDistance: 0.4
   speed: 1
+--- !u!114 &8462385832999032509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623093679068858710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e9bcba294259b4098eaa8c3a72e512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsSO: {fileID: 11400000, guid: 0ee11e4c380a4fd46a5fcf41ccec1463, type: 2}
+  currentHealth: 0

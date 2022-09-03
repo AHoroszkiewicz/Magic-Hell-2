@@ -25,23 +25,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Run()
     {
-        Vector2 playerVelocity = new Vector2(Input.x * moveSpeed, Input.y * moveSpeed);
-        myRigidbody.velocity = playerVelocity;
+        if (!myAnimator.GetBool("isDead"))
+            {
+            Vector2 playerVelocity = new Vector2(Input.x * moveSpeed, Input.y * moveSpeed);
+            myRigidbody.velocity = playerVelocity;
+    
+            bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
 
-        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
-
-        bool playerHasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
-        if (playerHasHorizontalSpeed)
-        {
-            myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
-        }
-        else if(playerHasVerticalSpeed)
-        {
-            myAnimator.SetBool("isRunning", playerHasVerticalSpeed);
-        }
-        else
-        {
-            myAnimator.SetBool("isRunning", false);
+            bool playerHasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
+            if (playerHasHorizontalSpeed)
+            {
+               myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
+            }
+            else if(playerHasVerticalSpeed)
+            {
+                myAnimator.SetBool("isRunning", playerHasVerticalSpeed);
+            }
+            else
+            {
+                myAnimator.SetBool("isRunning", false);
+            }
         }
     }
 
