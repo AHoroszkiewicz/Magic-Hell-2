@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] float fireRate;
+    [SerializeField] int fireRate = 1;
+    [SerializeField] float projectileSpeed = 1f;
     [SerializeField] GameObject projectile;
     [SerializeField] NearestEnemy nearestEnemy;
-    private Transform inRange;
+    private Transform target;
 
     private void Start()
     {
@@ -16,11 +17,37 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator ProjectileSpawn()
     {
-        yield return new WaitForSeconds(fireRate);
-        inRange = nearestEnemy.GetNearestEnemy();
-        if (inRange != null)
+        while (0<1)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            target = nearestEnemy.GetNearestEnemy();
+            if (target != null)
+            {
+                var newProjectile = Instantiate(projectile, transform.position, Quaternion.Euler(Vector3.forward * (RotateTowardsTarget())));
+                projectile.transform.localScale = new Vector2(1f, Mathf.Sign(target.position.x - transform.position.x));
+                MoveTowardsTarget(newProjectile);
+                Destroy(newProjectile, 3f);
+                yield return new WaitForSeconds(fireRate);
+            }
+            else
+            {                
+                yield return new WaitForSeconds(fireRate);
+            }
         }
+    }
+
+    private float RotateTowardsTarget()
+    {
+        var offset = 0f;
+        Vector2 direction = target.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return offset + angle;
+    }
+
+    private void MoveTowardsTarget(GameObject projectile)
+    {
+        //transform.position = Vector2.MoveTowards(transform.position, target.position, projectileSpeed * Time.deltaTime);
+        projectile.GetComponent<Rigidbody2D>().velocity = 
+            (target.transform.position - transform.position).normalized * projectileSpeed;
     }
 }

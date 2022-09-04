@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 3991557312522142236}
   - component: {fileID: 3991557312522142237}
   - component: {fileID: 3991557312522142226}
-  - component: {fileID: 3991557312522142239}
+  - component: {fileID: -941710110197203024}
+  - component: {fileID: -1819247287985146258}
+  - component: {fileID: -8195643858389915073}
   m_Layer: 8
   m_Name: EvilStaffProjectile
   m_TagString: Projectile
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3991557312522142227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: -1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,7 +108,44 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3991557312522142239
+--- !u!50 &-941710110197203024
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991557312522142227}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &-1819247287985146258
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991557312522142227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.045833364, y: -0.016885936}
+  serializedVersion: 2
+  m_Radius: 0.10986844
+--- !u!114 &-8195643858389915073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c78bdfddff2f04899deece4984f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3623093679068858707, guid: ed14de6d64b57774ba9a545ad8e969aa, type: 3}
-  speed: 3
-  nearestEnemy: {fileID: 623783053041931892, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
+  statsSO: {fileID: 11400000, guid: d4855245a8294714098c3db987c4a416, type: 2}
