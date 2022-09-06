@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator ProjectileSpawn()
     {
-        while (0<1)
+        while (true)
         {
             target = nearestEnemy.GetNearestEnemy();
             if (target != null)
