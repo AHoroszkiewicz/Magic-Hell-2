@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Animator myAnimator;
     private Vector2 Input;
-    [SerializeField] float moveSpeed = 10f;
     private NearestEnemy nearestEnemy;
+    [SerializeField] float moveSpeed = 10f;
 
     private void Start()
     {
@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
-        //Debug.Log(nearestEnemy.GetNearestEnemy());
     }
 
     private void Run()
@@ -47,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 myAnimator.SetBool("isRunning", false);
             }
+        }
+        else
+        {
+            myRigidbody.velocity = new Vector2();
         }
     }
 

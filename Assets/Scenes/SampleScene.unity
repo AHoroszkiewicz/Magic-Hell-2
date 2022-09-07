@@ -491,11 +491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3623093679068858707, guid: ed14de6d64b57774ba9a545ad8e969aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5427594
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 3623093679068858707, guid: ed14de6d64b57774ba9a545ad8e969aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7816271
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3623093679068858707, guid: ed14de6d64b57774ba9a545ad8e969aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -542,10 +542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 234283253, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
-      propertyPath: projectileSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7540242489720561305, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
       propertyPath: m_Name
       value: PlayerEvil
@@ -593,14 +589,6 @@ PrefabInstance:
     - target: {fileID: 7540242489720561311, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7540242489720561314, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7540242489720561314, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
-      propertyPath: m_BodyType
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}

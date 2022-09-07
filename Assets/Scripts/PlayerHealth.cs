@@ -8,13 +8,17 @@ public class PlayerHealth : MonoBehaviour
 {
     private Image healthBar;
     private float maxHealth;
+    private float enemyDamage;
     [SerializeField] StatsSO statsSO;
-    [SerializeField] float currentHealth;
+    [SerializeField] GameObject healthBarObject;
     [SerializeField] Animator myAnimator;
+    [SerializeField] float immunityTime;
+    [SerializeField] float currentHealth;
 
     private void Start()
     {
-        healthBar = GetComponent<Image>();
+        StartCoroutine(TakingDamage());
+        healthBar = healthBarObject.GetComponent<Image>();
         maxHealth = statsSO.health;
         currentHealth = maxHealth;
     }
@@ -29,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            myAnimator.SetBool("isRunning", false);
             myAnimator.SetBool("isDead", true);
         }
     }
@@ -36,5 +41,47 @@ public class PlayerHealth : MonoBehaviour
     private void HealthBar()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
+    }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (collision.gameObject.GetComponent<EnemyStats>() != null)
+            {
+                enemyDamage = collision.gameObject.GetComponent<EnemyStats>().GetDamage();
+            }
+        }
+    }
+
+    private IEnumerator TakingDamage()
+    {
+        while (true)
+        {
+            if (enemyDamage > 0)
+            {
+                TakeDamage(enemyDamage);
+                yield return new WaitForSeconds(immunityTime);
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+    
+    private void TakeDamage(float damage)
+    {
+        if (damage > 0)
+        {
+            currentHealth -= damage;
+            enemyDamage = 0f;
+        }
+    }
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
     }
 }

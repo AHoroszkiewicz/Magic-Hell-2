@@ -189,7 +189,6 @@ GameObject:
   - component: {fileID: 2103479853}
   - component: {fileID: 2103479856}
   - component: {fileID: 2103479855}
-  - component: {fileID: 2103479854}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -255,21 +254,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2103479854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103479852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69895136ec32bc7469de22acb0185de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statsSO: {fileID: 11400000, guid: ffca4e42385d9be488b481ce7173f133, type: 2}
-  currentHealth: 100
-  myAnimator: {fileID: 7540242489720561313}
 --- !u!1 &4949280298878918507
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
+  projectileSpeed: 3
   projectile: {fileID: 3991557312522142227, guid: 23bde298cc435f14fbf35c9ac929c6b1, type: 3}
   nearestEnemy: {fileID: 623783053041931892}
 --- !u!1 &7540242489720561305
@@ -333,6 +318,7 @@ GameObject:
   - component: {fileID: 7540242489720561313}
   - component: {fileID: 7540242489720561315}
   - component: {fileID: 623783053041931892}
+  - component: {fileID: 233980590}
   m_Layer: 6
   m_Name: PlayerEvil
   m_TagString: Player
@@ -421,7 +407,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -523,3 +509,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 7540242489720561311}
   OverlapRadius: 10
+--- !u!114 &233980590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540242489720561305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69895136ec32bc7469de22acb0185de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsSO: {fileID: 11400000, guid: ffca4e42385d9be488b481ce7173f133, type: 2}
+  healthBarObject: {fileID: 2103479852}
+  myAnimator: {fileID: 7540242489720561313}
+  immunityTime: 1
+  currentHealth: 0

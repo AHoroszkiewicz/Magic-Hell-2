@@ -16,10 +16,10 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if (collision.gameObject.GetComponent<EnemyHealth>() != null)
+            if (collision.gameObject.GetComponent<EnemyStats>() != null)
             {
                 Destroy(gameObject);
-                collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                collision.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
             }
         }
     }
