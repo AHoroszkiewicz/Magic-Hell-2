@@ -46,7 +46,6 @@ public class Shooting : MonoBehaviour
 
     private void MoveTowardsTarget(GameObject projectile)
     {
-        //transform.position = Vector2.MoveTowards(transform.position, target.position, projectileSpeed * Time.deltaTime);
         projectile.GetComponent<Rigidbody2D>().velocity = 
             (target.transform.position - transform.position).normalized * projectileSpeed;
     }

@@ -17,7 +17,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(TakingDamage());
         healthBar = healthBarObject.GetComponent<Image>();
         maxHealth = statsSO.health;
         currentHealth = maxHealth;
@@ -25,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        TakeDamage();
         HealthBar();
         Die();
     }
@@ -54,28 +54,12 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
-
-    private IEnumerator TakingDamage()
-    {
-        while (true)
-        {
-            if (enemyDamage > 0)
-            {
-                TakeDamage(enemyDamage);
-                yield return new WaitForSeconds(immunityTime);
-            }
-            else
-            {
-                yield return null;
-            }
-        }
-    }
     
-    private void TakeDamage(float damage)
+    private void TakeDamage()
     {
-        if (damage > 0)
+        if (enemyDamage > 0)
         {
-            currentHealth -= damage;
+            currentHealth -= enemyDamage;
             enemyDamage = 0f;
         }
     }
