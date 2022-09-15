@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 7540242489720561315}
   - component: {fileID: 623783053041931892}
   - component: {fileID: 233980590}
+  - component: {fileID: 1107508149}
   m_Layer: 6
   m_Name: PlayerEvil
   m_TagString: Player
@@ -382,7 +383,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1274845567
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1987444238, guid: a0a32060df0f463459cb5c7d8520e993, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -526,3 +527,18 @@ MonoBehaviour:
   myAnimator: {fileID: 7540242489720561313}
   immunityTime: 1
   currentHealth: 0
+--- !u!114 &1107508149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540242489720561305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c680a14746f8bc540af75654b105a14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundRule: {fileID: 11400000, guid: f407d54a50f1b03428b8795ad6855978, type: 2}
+  tileMap: {fileID: 0}
+  spawnSize: 32
