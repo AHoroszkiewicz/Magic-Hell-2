@@ -12,13 +12,13 @@ public class Projectile : MonoBehaviour
         damage = statsSO.damage;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Destroy(gameObject);
         if (collision.gameObject.tag == "Enemy")
         {
             if (collision.gameObject.GetComponent<EnemyStats>() != null)
             {
-                Destroy(gameObject);
                 collision.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
             }
         }

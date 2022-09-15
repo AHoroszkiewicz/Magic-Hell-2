@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    private float damage;
     private float maxHealth;
     private Animator myAnimator;
     private CapsuleCollider2D myCollider;
-    private float damage;
+    private Rigidbody2D myRigidbody;
     [SerializeField] StatsSO statsSO;
     [SerializeField] float currentHealth;
     [SerializeField] float deathTimer = 3f;
@@ -20,11 +21,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth = maxHealth;
         myAnimator = GetComponent<Animator>();
         myCollider = GetComponent<CapsuleCollider2D>();
-    }
-
-    private void Update()
-    {
-
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float damage)
@@ -39,6 +36,7 @@ public class EnemyStats : MonoBehaviour
 
     private void Die()
     {
+        Destroy(myRigidbody);
         Destroy(myCollider);
         myAnimator.SetBool("isDead", true);
         Destroy(gameObject, deathTimer);

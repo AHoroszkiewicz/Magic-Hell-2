@@ -16,7 +16,6 @@ public class EnemyMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
     }
-
     
     private void Update()
     {
@@ -30,7 +29,8 @@ public class EnemyMovement : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, target.position) >= stoppingDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                myRigidbody.velocity =
+            (target.transform.position - transform.position).normalized * speed;
             }
         }
     }

@@ -15,7 +15,6 @@ public class BackgroundGenerator : MonoBehaviour
         while (true)
         {
             Vector3Int currentCell = tileMap.WorldToCell(transform.position);
-            //Debug.Log(currentCell);
             maxX = currentCell.x + spawnSize / 2;
             minX = currentCell.x - spawnSize / 2;
             maxY = currentCell.y + spawnSize / 2;
@@ -25,22 +24,13 @@ public class BackgroundGenerator : MonoBehaviour
                 for (int j = minY; j < maxY; j++)
                 {
                     Vector3Int checkedCell = new Vector3Int(i,j);
-                    //Debug.Log("teraz dziala");
                     if (!tileMap.HasTile(checkedCell))
                     {
-                        Debug.Log("dziala");
                         tileMap.SetTile(checkedCell, backgroundRule);
                     }
                 }
             }
             yield return new WaitForSeconds(1);
         }
-    }
-
-    private void Update()
-    {
-        //Debug.Log("maxX: " + maxX + "minX: " + minX);
-        //Debug.Log("maxY: " + maxY + "minY: " + minY);
-        
     }
 }
