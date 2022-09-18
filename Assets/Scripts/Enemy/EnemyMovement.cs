@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private Rigidbody2D myRigidbody;
     private Animator myAnimator;
-    [SerializeField] float stoppingDistance = 1f;
     [SerializeField] float speed = 10f;
 
     private void Start()
@@ -27,11 +26,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!myAnimator.GetBool("isDead"))
         {
-            if (Vector2.Distance(transform.position, target.position) >= stoppingDistance)
-            {
                 myRigidbody.velocity =
-            (target.transform.position - transform.position).normalized * speed;
-            }
+            (target.transform.position - transform.position).normalized * speed;  
         }
     }
 
