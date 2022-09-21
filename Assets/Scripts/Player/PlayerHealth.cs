@@ -68,4 +68,13 @@ public class PlayerHealth : MonoBehaviour
     {
         return currentHealth;
     }
+
+    public void Heal(float healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
 }

@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 623783053041931892}
   - component: {fileID: 233980590}
   - component: {fileID: 1107508149}
+  - component: {fileID: 4912234471780141965}
   m_Layer: 6
   m_Name: PlayerEvil
   m_TagString: Player
@@ -542,3 +543,16 @@ MonoBehaviour:
   backgroundRule: {fileID: 11400000, guid: f407d54a50f1b03428b8795ad6855978, type: 2}
   tileMap: {fileID: 0}
   spawnSize: 32
+--- !u!114 &4912234471780141965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540242489720561305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3316a235707334a44989f776e1d1f928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 7540242489720561305}
