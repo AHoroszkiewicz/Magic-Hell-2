@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Projectile
+  - Chicken
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Player
   - Enemy
   - Projectile
-  - 
+  - Pickup
   - 
   - 
   - 
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3020121729
+    locked: 0
+  - name: Pickup
+    uniqueID: 2753755281
     locked: 0
   - name: Enemy
     uniqueID: 1639435975

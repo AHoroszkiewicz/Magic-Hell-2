@@ -1760,6 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 738806115}
+  healItem: {fileID: 7519155853589875972, guid: 2f659721cc9f6ec49afd5c8883b48a98, type: 3}
   waves:
   - {fileID: 11400000, guid: f39ee4772ddcb2340a72980820a112d1, type: 2}
 --- !u!1 &2124491346
