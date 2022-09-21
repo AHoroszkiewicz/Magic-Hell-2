@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 Input;
     private NearestEnemy nearestEnemy;
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] MovementJoystick movementJoystick;
 
     private void Start()
     {
@@ -28,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!myAnimator.GetBool("isDead"))
             {
+            if (movementJoystick.joystickVec.y != 0)
+            {
+                Input = new Vector2(movementJoystick.joystickVec.x, movementJoystick.joystickVec.y);
+            }
+            else
+            {
+                Input = Vector2.zero;
+            }
             Vector2 playerVelocity = new Vector2(Input.x * moveSpeed, Input.y * moveSpeed);
             myRigidbody.velocity = playerVelocity;
     
