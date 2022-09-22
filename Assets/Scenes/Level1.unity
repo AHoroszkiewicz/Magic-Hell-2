@@ -886,6 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathMenu: {fileID: 337055482}
   pauseButton: {fileID: 243442937}
+  joystick: {fileID: 133675085}
   playerAnimator: {fileID: 738806120}
 --- !u!1 &519420028
 GameObject:
