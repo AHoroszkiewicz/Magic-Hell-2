@@ -6,6 +6,7 @@ public class DeathScreen : MonoBehaviour
 {
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject pauseButton;
+    [SerializeField] GameObject joystick;
     [SerializeField] Animator playerAnimator;
     private float timer;
     private bool onetime = false;
@@ -20,6 +21,7 @@ public class DeathScreen : MonoBehaviour
                 Time.timeScale = 0f;
                 deathMenu.SetActive(true);
                 pauseButton.SetActive(false);
+                joystick.SetActive(false);
                 onetime = true;
             }
         }
