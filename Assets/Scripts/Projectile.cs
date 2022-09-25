@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     {
         damage = statsSO.damage;
     }
-    //
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
