@@ -7,4 +7,5 @@ public class StatsSO : ScriptableObject
 {
     public float health;
     public float damage;
+    public float baseFireRate;
 }
