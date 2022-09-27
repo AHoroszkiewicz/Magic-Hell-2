@@ -23,4 +23,15 @@ public class Projectile : MonoBehaviour
             }
         }
     }
+
+    public float GetBaseFireRate()
+    {
+        float fixedFireRate = 1/statsSO.baseFireRate;
+        return fixedFireRate;
+    }
+
+    public int GetLevel()
+    {
+        return statsSO.level;
+    }
 }

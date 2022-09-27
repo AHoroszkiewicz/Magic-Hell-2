@@ -2213,6 +2213,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 234283253, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
+      propertyPath: projectiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 234283253, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
+      propertyPath: projectiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 3991557312522142227, guid: 23bde298cc435f14fbf35c9ac929c6b1, type: 3}
     - target: {fileID: 1107508149, guid: 9668c41eedf8f4043a9d9862e5a5ced3, type: 3}
       propertyPath: tileMap
       value: 
