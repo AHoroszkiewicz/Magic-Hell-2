@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator EvilProjectileSpawn()
     {
         while (true)
-        {
+        {//
             for (int i=0; i<projectiles.Count; i++)
             {
                 if (projectiles[i].name == "EvilStaffProjectile")
