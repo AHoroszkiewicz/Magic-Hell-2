@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     private Animator myAnimator;
     private CapsuleCollider2D myCollider;
     private Rigidbody2D myRigidbody;
+    [SerializeField] GameObject xpOrb;
     [SerializeField] StatsSO statsSO;
     [SerializeField] float currentHealth;
     [SerializeField] float deathTimer = 3f;
@@ -39,6 +40,7 @@ public class EnemyStats : MonoBehaviour
         Destroy(myRigidbody);
         Destroy(myCollider);
         myAnimator.SetBool("isDead", true);
+        Instantiate(xpOrb, transform.position, Quaternion.identity);
         Destroy(gameObject, deathTimer);
     }
 

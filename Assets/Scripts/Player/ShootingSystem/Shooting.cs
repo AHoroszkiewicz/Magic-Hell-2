@@ -8,10 +8,12 @@ public class Shooting : MonoBehaviour
     [SerializeField] List<GameObject> projectiles;
     [SerializeField] NearestEnemy nearestEnemy;
     private Transform target;
+    private float fireRate;
 
     private void Start()
     {
         StartCoroutine(EvilProjectileSpawn());
+        StartCoroutine(FireBallSpawn());
     }
 
     private IEnumerator EvilProjectileSpawn()
@@ -22,25 +24,42 @@ public class Shooting : MonoBehaviour
             {
                 if (projectiles[i].name == "EvilStaffProjectile")
                 {
-                    GameObject evilProjectile = projectiles[i];
-                    int level = evilProjectile.GetComponent<Projectile>().GetLevel();
-                    float EvilFireRate = evilProjectile.GetComponent<Projectile>().GetBaseFireRate();
-                    target = nearestEnemy.GetNearestEnemy();
-                    if (target != null && level>0)
-                    {
-                        var newProjectile = Instantiate(evilProjectile, transform.position, Quaternion.Euler(Vector3.forward * (RotateTowardsTarget())));
-                        evilProjectile.transform.localScale = new Vector2(1f, Mathf.Sign(target.position.x - transform.position.x));
-                        MoveTowardsTarget(newProjectile);
-                        Destroy(newProjectile, 3f);
-                        yield return new WaitForSeconds(EvilFireRate);
-                    }
-                    else
-                    {                
-                        yield return new WaitForSeconds(EvilFireRate);
-                    }
+                    ProjectileSpawn(i);
+                    yield return new WaitForSeconds(fireRate);
                 }
                 yield return null;
             }
+        }
+    }
+
+    private IEnumerator FireBallSpawn()
+    {
+        while (true)
+        {
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                if (projectiles[i].name == "FireStaffProjectile")
+                {
+                    ProjectileSpawn(i);
+                    yield return new WaitForSeconds(fireRate);
+                }
+                yield return null;
+            }
+        }
+    }
+
+    private void ProjectileSpawn(int listIndex)
+    {
+        GameObject projectile = projectiles[listIndex];
+        int level = projectile.GetComponent<Projectile>().GetLevel();
+        fireRate = projectile.GetComponent<Projectile>().GetBaseFireRate();
+        target = nearestEnemy.GetNearestEnemy();
+        if (target != null && level > 0)
+        {
+            var newProjectile = Instantiate(projectile, transform.position, Quaternion.Euler(Vector3.forward * (RotateTowardsTarget())));
+            projectile.transform.localScale = new Vector2(1f, Mathf.Sign(target.position.x - transform.position.x));
+            MoveTowardsTarget(newProjectile);
+            Destroy(newProjectile, 3f);
         }
     }
 

@@ -13,5 +13,10 @@ public class PickupSystem : MonoBehaviour
             Destroy(collision.gameObject);
             playerObject.GetComponent<PlayerHealth>().Heal(20);
         }
+        else if (collision.tag =="Experience")
+        {
+            Destroy(collision.gameObject);
+            playerObject.GetComponent<LevelSystem>().currentXp++;
+        }
     }
 }

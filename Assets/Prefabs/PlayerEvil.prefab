@@ -298,9 +298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3679bc637147948852b8327a6c26f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
   projectileSpeed: 3
-  projectile: {fileID: 3991557312522142227, guid: 23bde298cc435f14fbf35c9ac929c6b1, type: 3}
+  projectiles:
+  - {fileID: 3991557312522142227, guid: 23bde298cc435f14fbf35c9ac929c6b1, type: 3}
+  - {fileID: 3991557312522142227, guid: b5c1f52eb24ff584ab501347fe69d2f8, type: 3}
   nearestEnemy: {fileID: 623783053041931892}
 --- !u!1 &7540242489720561305
 GameObject:
@@ -321,6 +322,7 @@ GameObject:
   - component: {fileID: 233980590}
   - component: {fileID: 1107508149}
   - component: {fileID: 4912234471780141965}
+  - component: {fileID: 738806122}
   m_Layer: 6
   m_Name: PlayerEvil
   m_TagString: Player
@@ -497,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  movementJoystick: {fileID: 0}
 --- !u!114 &623783053041931892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,3 +559,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 7540242489720561305}
+--- !u!114 &738806122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540242489720561305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8749ef82665f0d04881a1fe599678395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentXp: 0
+  requiredXp: 100
+  additionMultiplier: 10
+  powerMultiplier: 2
+  divisionMultiplier: 7
+  xpBarObject: {fileID: 0}
+  statsSO: {fileID: 11400000, guid: ffca4e42385d9be488b481ce7173f133, type: 2}
+  UI: {fileID: 0}
