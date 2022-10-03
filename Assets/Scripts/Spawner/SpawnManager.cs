@@ -55,8 +55,8 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(healItem, enemySpawn, Quaternion.identity);
             }
-
-                yield return new WaitForSeconds(60/ waves[i].enemyAmount );
+                float wait = 60f / waves[i].enemyAmount;
+                yield return new WaitForSeconds(wait);
             }
         }
     }
