@@ -5,12 +5,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private float damage;
+    private int level;
     private Animator myAnimator;
     [SerializeField] StatsSO statsSO;
 
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
+        level = statsSO.level;
         damage = statsSO.damage;
     }
 
@@ -31,8 +33,11 @@ public class Projectile : MonoBehaviour
 
     public float GetBaseFireRate()
     {
+        if (level == 0)
+        {
+            return 0;
+        }
         float baseFireRate = statsSO.baseFireRate;
-        int level = statsSO.level;
         float fixedFireRate = 1/baseFireRate;
         if (level>0)
         {
@@ -43,11 +48,11 @@ public class Projectile : MonoBehaviour
 
     public int GetLevel()
     {
-        return statsSO.level;
+        return level;
     }
 
     public void LevelUp()
     {
-        statsSO.level++;
+        level++;
     }
 }

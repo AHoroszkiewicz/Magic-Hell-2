@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] float projectileSpeed = 1f;
-    [SerializeField] List<GameObject> projectiles;
+    public List<GameObject> projectiles;
     [SerializeField] NearestEnemy nearestEnemy;
     private Transform target;
     private float fireRate;
