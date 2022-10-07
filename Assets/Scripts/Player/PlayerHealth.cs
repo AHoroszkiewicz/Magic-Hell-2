@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Animator myAnimator;
     [SerializeField] float immunityTime;
     [SerializeField] float currentHealth;
-
+    //siema
     private void Start()
     {
         healthBar = healthBarObject.GetComponent<Image>();
