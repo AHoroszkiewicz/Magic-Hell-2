@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class DeathScreen : MonoBehaviour
@@ -7,23 +8,17 @@ public class DeathScreen : MonoBehaviour
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject pauseButton;
     [SerializeField] GameObject joystick;
-    [SerializeField] Animator playerAnimator;
-    private float timer;
-    private bool onetime = false;
 
-    private void Update()
+    public void EnableScreen(float value)
     {
-        if (playerAnimator.GetBool("isDead") && !onetime)
-        {
-            timer += Time.deltaTime;
-            if(timer>1)
-            {
-                Time.timeScale = 0f;
-                deathMenu.SetActive(true);
-                pauseButton.SetActive(false);
-                joystick.SetActive(false);
-                onetime = true;
-            }
-        }
+        Invoke("Screen",value);
+    }
+
+    private void Screen()
+    {
+        Time.timeScale = 0f;
+        deathMenu.SetActive(true);
+        pauseButton.SetActive(false);
+        joystick.SetActive(false);
     }
 }

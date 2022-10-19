@@ -19,11 +19,11 @@ public class LevelScreen : MonoBehaviour
 
     private void Update()
     {
-        if (items.Count < buttons.Count)
-        {
-            Destroy(buttons[buttons.Count - 1]);
-            buttons.RemoveAt(buttons.Count - 1);
-        }
+        //if (items.Count < buttons.Count)
+        //{
+        //    Destroy(buttons[buttons.Count - 1]);
+        //    buttons.RemoveAt(buttons.Count - 1);
+        //}
     }
 
     public void LevelUpScreen()

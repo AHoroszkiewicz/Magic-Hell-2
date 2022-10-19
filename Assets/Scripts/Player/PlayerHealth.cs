@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Animator myAnimator;
     [SerializeField] float immunityTime;
     [SerializeField] float currentHealth;
+    public UnityEvent onDeath;
 
     private void Start()
     {
@@ -26,16 +28,16 @@ public class PlayerHealth : MonoBehaviour
     {
         TakeDamage();
         HealthBar();
-        Die();
-    }
-
-    private void Die()
-    {
         if (currentHealth <= 0)
         {
+            onDeath.Invoke();
+        }
+    }
+
+    public void Die()
+    {
             myAnimator.SetBool("isRunning", false);
             myAnimator.SetBool("isDead", true);
-        }
     }
 
     private void HealthBar()
