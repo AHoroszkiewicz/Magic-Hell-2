@@ -6,4 +6,4 @@
 !(https://github.com/AHoroszkiewicz/Magic-Hell-2/blob/main/Screens/startingscreen.png)
 !(https://github.com/AHoroszkiewicz/Magic-Hell-2/blob/main/Screens/levelup.png)
 !(https://github.com/AHoroszkiewicz/Magic-Hell-2/blob/main/Screens/fight.png)
-!(https://github.com/AHoroszkiewicz/Magic-Hell-2/blob/main/Screens/death.png)
+!(https://github.com/AHoroszkiewicz/Magic-Hell-2/blob/main/Screens/death.png?raw=true)
